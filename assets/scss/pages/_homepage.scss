@@ -1,0 +1,631 @@
+.homepage {
+  .hint {
+    color: #8c94a0;
+    line-height: 1.71;
+
+    @include rem(font-size, 14px);
+  }
+
+  .features--list {
+    text-align: left;
+    background-color: transparent;
+
+    .features__item {
+
+    }
+  }
+
+  .lead {
+    @include rem(line-height, 35px);
+    @include rem(margin-bottom, 20px);
+
+    color: rgba($secondary, .6);
+  }
+
+  .separator {
+    border-bottom: 1px solid #ebedef;
+  }
+
+  .section {
+    &__title {
+      letter-spacing: -.01em;
+
+      @include rem(margin-bottom, 17px);
+
+      img {
+        position: relative;
+
+        @include rem(top, -5px);
+        @include rem(margin-right, 5px);
+        @include rem(margin-left, -40px);
+      }
+    }
+    
+    &__img {
+      img {
+        pointer-events: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+    }
+
+    &__subtitle {
+      line-height: 1.43;
+      text-align: left;
+      color: rgba($secondary, .6);
+
+      @include rem(margin-bottom, 38px);
+      @include rem(font-size, 28px);
+    }
+  }
+  
+  @media all and (max-width: $screen-landscape) {
+    .section {
+      &__subtitle {
+        font-size: 20px;
+        text-align: center;
+        margin-bottom: 25px;
+        line-height: 1.6;
+      }
+
+      &__title {
+        letter-spacing: -0.3px;
+        margin-bottom: 13px;
+        text-align: center;
+        font-size: 26px;
+        line-height: 1.38;
+      }
+
+      .container {
+        width: 400px;
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+.section_gray {
+  background-color: rgb(249, 250, 250);
+}
+
+.section_lead {
+  @include rem(padding, 115px 0 88px);
+
+  .apps {
+    text-align: left;
+
+    @include rem(margin-top, 14px);
+    @include rem(margin-bottom, 14px);
+  }
+
+  .social {
+    @include rem(margin-top, 50px);
+    @include rem(margin-bottom, -55px);
+
+    > li {
+      @include rem(margin-left, 9px);
+
+      &:first-child {
+        margin-left: 0 !important;
+      }
+
+      .icon {
+        @include rem(font-size, 16px);
+      }
+    }
+  }
+
+  .section__img {
+    position: absolute;
+    z-index: 2;
+
+    @include rem(left, 19px);
+    @include rem(top, -65px);
+  }
+
+  @media all and (max-width: $screen-tablet) {
+    .section__img {
+      left: -40px;
+      right: auto;
+    }
+  }
+
+  @media all and (max-width: $screen-landscape) {
+    padding: 32px 0;
+    text-align: center;
+
+    .apps {
+      text-align: center;
+      margin-top: 16px;
+    }
+
+    .social {
+      margin: 40px auto 0;
+
+      > li {
+        margin-left: 0;
+        margin-right: 25px;
+        margin-bottom: 10px;
+        width: 34px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        .icon {
+          font-size: 20px;
+        }
+      }
+    }
+
+    .btn_custom {
+      margin-bottom: 10px;
+      padding: 12px 10px;
+      font-size: 18px;
+      width: 100%;
+    }
+
+    .hint {
+      text-align: left;
+      font-size: 10px;
+    }
+
+    .section__title {
+      font-size: 34px;
+      line-height: 1.18;
+    }
+  }
+}
+
+.btn_custom {
+  width: 230px;
+  max-width: 100%;
+
+  @include rem(margin-bottom, 20px);
+
+  span {
+    margin-left: 4px;
+  }
+}
+
+.section_features {
+  @include rem(padding, 180px 0 50px);
+
+  .btn_open_video {
+    @include rem(margin-top, -8px);
+    @include rem(margin-bottom, 10px);
+    @include rem(font-size, 22px);
+  }
+
+  .features--list {
+    @include rem(margin, 70px 0 0);
+  }
+
+  .lead {
+    color: $secondary;
+  }
+
+  @media all and (max-width: $screen-tablet) {
+    padding-top: 140px;
+  }
+
+  @media all and (max-width: $screen-landscape) {
+    padding: 30px 0;
+
+    .section__title {
+      margin-bottom: 5px;
+      font-size: 34px;
+      line-height: 1.18;
+
+      img {
+        width: 64px;
+        margin-right: 0;
+      }
+    }
+
+    .section__title {
+      line-height: 1;
+    }
+
+    .btn_open_video {
+      margin-top: 5px;
+      font-size: 15px;
+    }
+
+    .lead {
+      font-size: 17px;
+      line-height: 1.45;
+      color: $secondary;
+      text-align: left;
+    }
+
+    .features--list {
+      margin: 14px auto 0;
+
+      .row > div {
+        display: block;
+      }
+
+      .features__img {
+        margin-right: 20px;
+        width: 58px;
+      }
+
+      .features__item {
+        height: auto;
+        margin-bottom: 18px;
+      }
+
+      .features__title {
+        font-size: 17px;
+        line-height: 1.4;
+        margin-top: 10px;
+      }
+    }
+  }
+}
+
+.section_about {
+  overflow: hidden;
+
+  @include rem(padding, 95px 0 55px);
+
+  .h2 {
+    @include rem(margin-bottom, 8px);
+  }
+
+  .lead {
+    @include rem(padding-right, 30px);
+  }
+
+  .section__img {
+    @include rem(margin-left, -95px);
+    @include rem(margin-top, 30px);
+    @include rem(margin-bottom, -375px);
+  }
+
+  @media all and (max-width: $screen-landscape) {
+    text-align: center;
+
+    .section__img {
+      margin: -35px 0 40px 0;
+      text-align: center;
+    }
+
+    .h2 {
+      font-size: 26px;
+      line-height: 1.35;
+      margin-bottom: 5px;
+    }
+
+    .lead {
+      font-size: 17px;
+      line-height: 1.41;
+      margin-bottom: 40px;
+    }
+  }
+}
+
+.section_discover {
+  @include rem(padding, 95px 0 80px);
+
+  .section__title {
+    @include rem(margin-bottom, 10px);
+  }
+
+  .lead {
+    @include rem(margin-bottom, 73px);
+  }
+
+  @media all and (max-width: $screen-landscape) {
+    padding: 45px 0;
+
+    .lead {
+      font-size: 17px;
+      line-height: 1.41;
+      margin-bottom: 30px;
+    }
+  }
+}
+
+.section_faq {
+  @include rem(padding, 100px 0 90px);
+
+  .section__title {
+    @include rem(margin-bottom, 70px);
+  }
+
+  .panel_heading {
+    background-color: transparent;
+
+    a:after {
+      display: none;
+    }
+  }
+
+
+  @media all and (max-width: $screen-landscape) {
+    padding: 50px 0 20px;
+  }
+}
+
+.section_actions {
+  @include rem(padding, 58px 0);
+
+  @media all and (max-width: $screen-tablet) {
+    padding: 45px 0;
+  }
+}
+
+.section_apps {
+  text-align: center;
+
+  @include rem(padding, 100px 0);
+
+  &__logo {
+    @include rem(margin-left, -16px);
+    @include rem(margin-top, -2px);
+    @include rem(margin-right, 40px);
+  }
+
+  .btn_custom {
+    margin-bottom: 0;
+    margin-top: 20px;
+  }
+  
+  .section__title {
+    overflow: hidden;
+    margin-bottom: 0;
+
+    .h2 {
+      @include rem(margin-bottom, 7px);
+    }
+
+    .h3 {
+      margin-bottom: 0;
+      font-weight: normal;
+      color: rgba($secondary, .6);
+
+      a {
+        color: inherit;
+      }
+    }
+  }
+
+  @media all and (max-width: $screen-tablet) {
+    text-align: center;
+    padding: 45px 0 52px;
+
+    .text-right {
+      text-align: left !important;
+    }
+
+    .container.container {
+      width: 380px;
+    }
+
+    .section__title {
+      .h2 {
+        font-size: 26px;
+        line-height: 1.38;
+        margin-bottom: 4px;
+      }
+    }
+
+    &__logo {
+      float: none !important;
+      margin-right: 0;
+    }
+
+    .btn {
+      width: 100%;
+      font-size: 17px;
+      height: 50px;
+      padding-top: 14px;
+    }
+  }
+}
+
+.section_disc {
+  padding: 0;
+
+  p {
+    @include rem(font-size, 14px);
+    @include rem(line-height, 20px);
+    @include rem(margin-bottom, 10px);
+
+    color: #8c94a0;
+
+    a {
+      color: $secondary;
+
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+
+  .separator {
+    @include rem(margin-bottom, 40px);
+  }
+
+  @media all and (max-width: $screen-landscape) {
+    p {
+      font-size: 11px;
+      line-height: 16px;
+    }
+  }
+}
+
+.btn_open_video {
+  @include rem(font-size, 22px);
+
+  img {
+    position: relative;
+    top: -2px;
+
+    @include rem(margin-right, 10px);
+    @include rem(width, 40px);
+    @include rem(height, 40px);
+    @include transition(transform $transition-default);
+  }
+
+  &:hover {
+    img {
+      @include scale(1.05);
+    }
+  }
+}
+
+.features {
+  &--list {
+    .row {
+      font-size: 0;
+
+      > div {
+        display: inline-block;
+        vertical-align: top;
+        float: none;
+      }
+    }
+
+    .features__item {
+      width: 100%;
+      max-width: 100%;
+      text-align: left;
+
+      @include clearfix;
+      @include rem(margin-bottom, 62px);
+    }
+
+    .features__img {
+      float: left;
+
+      @include rem(width, 80px);
+      @include rem(margin-right, 30px);
+      @include rem(margin-top, 6px);
+
+      img {
+        max-width: 100%;
+        width: auto;
+        height: auto;
+      }
+    }
+    
+    .features__content {
+      overflow: hidden;
+    }
+
+    .features__title {
+      font-weight: $fw-semi;
+      line-height: 1.9;
+
+      @include rem(font-size, 21px);
+    }
+
+    .features__text {
+      color: rgba($secondary, .6);
+      line-height: 1.67;
+
+      @include rem(font-size, 18px);
+    }
+  }
+}
+
+.section_card {
+  background-color: #000;
+  color: $white;
+
+  @include rem(padding, 100px 0);
+
+  .section__title {
+    color: $white;
+    text-align: left;
+
+    @include rem(margin-bottom, 6px);
+  }
+
+  .btn--flat {
+    @include rem(font-size, 22px);
+    @include rem(padding, 5px);
+    @include rem(margin, 0 -5px);
+  }
+
+  p.lead, p {
+    color: rgba($white, .8);
+    text-align: left;
+  }
+
+  .section__img {
+    @include rem(margin-top, 57px);
+    @include rem(margin-left, 65px);
+  }
+
+  @media all and (max-width: $screen-landscape) {
+    padding: 45px 0;
+
+    .section__img {
+      margin-left: 0;
+
+      img {
+        @include transform(translate(-90px, 0))
+      }
+    }
+  }
+
+  @media all and (max-width: $screen-mobile) {
+    .section__img {
+      margin-left: 0;
+
+      img {
+        max-width: 100%;
+        height: auto;
+
+        @include transform(none)
+      }
+    }
+  }
+}
+
+.panel_group {
+  @include rem(margin-bottom, 40px);
+
+  .panel_heading {
+    background-color: transparent;
+  }
+
+  &--faq {
+    .panel_title {
+      @include transition(color $transition-default);
+    }
+
+    .panel_heading a {
+      @include rem(padding, 18px 40px 19px 0);
+
+      &:hover .panel_title {
+        color: $primary;
+      }
+    }
+
+    .panel_body p {
+      @include rem(margin-bottom, 10px);
+    }
+
+    @media all and (max-width: $screen-landscape) {
+      .panel_heading a {
+        padding: 14px 20px 14px 0;
+      }
+
+      .panel_title {
+        font-size: 17px;
+      }
+
+      .panel_body p {
+        font-size: 15px;
+        line-height: 1.6;
+      }
+    }
+  }
+}

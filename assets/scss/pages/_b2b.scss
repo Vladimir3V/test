@@ -1,0 +1,725 @@
+.list {
+  &--striped {
+    @include rem(margin-top, -7px);
+    @include rem(margin-bottom, 60px);
+
+    .list__item {
+      border-top: 1px solid $border-alt;
+      color: $text;
+
+      @include rem(font-size, 18px);
+      @include rem(line-height, 30px);
+      @include rem(padding, 10px 0);
+
+      &:first-child {
+        border-top: 0;
+      }
+
+      a {
+        color: inherit;
+
+        @include rem(padding, 10px 0);
+
+        &:hover {
+          color: $blue;
+        }
+      }
+    }
+  }
+}
+
+.page_nav {
+  .container {
+    position: relative;
+  }
+
+  .btn_contact {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+
+    @include rem(margin-top, -25px);
+  }
+
+  @media all and (max-width: $screen-tablet) {
+
+  }
+}
+
+.section--padding_bottom {
+  @include rem(padding-bottom, 60px)
+}
+
+.btn_contact_header {
+  @include rem(line-height, 40px);
+
+  .icon {
+    @include rem(font-size, 28px);
+  }
+
+  &:hover {
+    color: $text;
+  }
+
+  .fixed & {
+    color: #fff;
+    margin-top: -9px;
+  }
+
+  @media all and (max-width: $screen-mobile-old) {
+    line-height: 25px;
+
+    &:hover {
+      color: $white;
+    }
+
+    .icon {
+      @include rem(font-size, 22px);
+    }
+
+    .fixed & {
+      margin-top: 0px;
+    }
+  }
+}
+
+.list {
+  &--media {
+    @include rem(margin-bottom, 40px);
+
+    .list__item {
+      text-align: center;
+
+      @include rem(margin-bottom, 60px);
+
+      img {
+        @include rem(margin-bottom, 20px);
+      }
+    }
+
+    .btn {
+      @include rem(margin-top, 10px)
+    }
+
+    @media all and (max-width: $screen-landscape) {
+      .pull-right {
+        float: none!important;
+      }
+
+      .list__item {
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
+    @media all and (min-width: $screen-landscape + 1) {
+      .list__item {
+        text-align: left;
+
+        img {
+          @include rem(margin-top, 70px);
+        }
+      }
+
+      .pull-right {
+        text-align: right;
+      }
+    }
+  }
+}
+
+@media all and (max-width: $screen-landscape) {
+  h1 {
+    text-align: center;
+  }
+}
+
+.section--banner.section--padding {
+  @include rem(padding, 40px 0)
+}
+
+
+@mixin linear-gradient($angle, $color-stops...) {
+  $_angle-with-vendor-prefix: "";
+  $_angle: "";
+  @if $angle == "to top" or $angle == "bottom" {
+    $_angle-with-vendor-prefix: bottom;
+    $_angle: to top;
+  } @else if $angle == "to right" or $angle == "left" {
+    $_angle-with-vendor-prefix: left;
+    $_angle: to right;
+  } @else if $angle == "to bottom" or $angle == "top" {
+    $_angle-with-vendor-prefix: top;
+    $_angle: to bottom;
+  } @else if $angle == "to left" or $angle == "right" {
+    $_angle-with-vendor-prefix: right;
+    $_angle: to left;
+  } @else if $angle == "to top right" or $angle == "bottom left" {
+    $_angle-with-vendor-prefix: bottom left;
+    $_angle: to top right;
+  } @else if $angle == "to bottom right" or $angle == "top left" {
+    $_angle-with-vendor-prefix: top left;
+    $_angle: to bottom right;
+  } @else if $angle == "to bottom left" or $angle == "top right" {
+    $_angle-with-vendor-prefix: top right;
+    $_angle: to bottom left;
+  } @else if $angle == "to top left" or $angle == "bottom right" {
+    $_angle-with-vendor-prefix: bottom right;
+    $_angle: to top left;
+  } @else {
+    $_angle-with-vendor-prefix: $angle % 360;
+    $_angle: (90 - $angle) % 360;
+  }
+  background: -webkit-linear-gradient($_angle-with-vendor-prefix, $color-stops);
+  background: -moz-linear-gradient($_angle-with-vendor-prefix, $color-stops);
+  background: -o-linear-gradient($_angle-with-vendor-prefix, $color-stops);
+  background: linear-gradient($_angle, $color-stops);
+}
+
+.case_studies {
+  @include rem(margin-top, 50px);
+
+  &__item {
+    position: relative;
+
+    @include rem(margin-bottom, 60px);
+  }
+
+  h3 {
+    @include rem(margin-bottom, 10px);
+
+    a {
+      color: inherit;
+
+      &:hover {
+        color: rgba($secondary, .8);
+      }
+    }
+  }
+
+  &__img {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+
+    @include rem(margin-bottom, 30px);
+    @include rem(height, 300px);
+    @include rem(line-height, 300px);
+
+    > a {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+    }
+
+    img {
+      @include rem(width, 259px);
+      @include rem(margin-top, -50px);
+    }
+
+    &--yellow {
+      @include linear-gradient('to bottom', #FFCB48, #FFAE2C);
+    }
+
+    &--green {
+      @include linear-gradient('to bottom', #20d330, #13b72a);
+    }
+
+    &--blue {
+      @include linear-gradient('to bottom', #41C5FF, #0388ef);
+    }
+
+    &--gray {
+      @include linear-gradient('to bottom', #EBEDEF, #CFD2D7);
+    }
+  }
+}
+
+html {
+  .text {
+    margin-bottom: 0;
+
+    .lead {
+      @include rem(margin-bottom, 70px);
+
+      + .lead {
+        @include rem(margin-top, -50px)
+      }
+
+    }
+
+    .header_nav__list {
+      float: none;
+    }
+
+    .site_nav .btn {
+      @media all and (max-width: $screen-tablet) {
+        @include rem(padding-left, 16px);
+        @include rem(padding-right, 16px);
+
+        span {
+          display: none;
+        }
+
+        .icon {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  .page__title,
+  .page__subtitle {
+    text-align: center;
+
+    ~ p {
+      @include rem(font-size, 22px);
+    }
+  }
+}
+
+.btn_show_form, .btn_show_form.btn-sm {
+  @include rem(padding-left, 40px);
+  @include rem(padding-right, 40px);
+}
+
+.checkbox,
+.radio {
+  position: relative;
+  overflow: hidden;
+  margin: 0 0 5px;
+
+  @extend %noselect;
+
+  + .form-group {
+    margin-top: 10px;
+  }
+
+  &__control {
+    position: absolute;
+    right: 100%;
+    opacity: 0;
+    visibility: hidden;
+
+    &:checked {
+      ~ .control-label {
+        &:before {
+          background: $primary !important;
+          border-color: $primary !important;
+        }
+
+        &:after {
+          opacity: 1 !important;
+          visibility: visible !important;
+
+          @include transform(scale(1));
+        }
+      }
+    }
+
+    &[disabled] {
+      ~ .control-label {
+        &:before {
+          background: $gray-5 !important;
+          border-color: $gray-25 !important;
+        }
+
+        &:after {
+          color: $gray-25 !important;
+        }
+      }
+    }
+  }
+
+  &__label, label {
+    position: relative;
+    color: #3f4d60;
+
+    @include rem(padding, 5px 0 5px 30px);
+
+    &:hover {
+      &:before {
+        border-color: $gray-25;
+      }
+    }
+
+    &:before {
+      content: '';
+      border: 1px solid $gray-25;
+      position: absolute;
+      left: 0;
+
+      @include rem(top, 5px);
+      @include rem(width, 20px);
+      @include rem(height, 20px);
+
+      @include transition(background $transition-default, border $transition-default);
+    }
+
+    &:after {
+      content: '';
+      color: $white;
+      position: absolute;
+
+      @include transform(scale(0));
+      @include transition(opacity $transition-default, visibility $transition-default, transform $transition-default);
+    }
+  }
+}
+
+.checkbox {
+  &__label, label {
+    &:before {
+      @include border-radius(4px);
+    }
+
+    &:after {
+      font-family: 'icon' !important;
+      color: $white;
+      content: "\e90b";
+      left: 0;
+      text-align: center;
+
+      @include rem(width, 20px);
+      @include rem(top, 6px);
+      @include rem(font-size, 16px);
+    }
+  }
+}
+
+.radio {
+  &__control {
+    &[disabled] {
+      ~ .control-label {
+        &:after {
+          background: $gray-25 !important;
+        }
+      }
+    }
+  }
+
+  &__label, label {
+    &:before {
+      background: $white;
+
+      @include border-radius(100px);
+    }
+
+    &:after {
+      background: $white;
+
+      @include border-radius(100px);
+      @include rem(width, 6px);
+      @include rem(height, 6px);
+      @include rem(top, 12px);
+      @include rem(left, 7px);
+    }
+  }
+}
+
+.radio {
+  overflow: hidden;
+
+  &--plate {
+    overflow: hidden;
+    position: relative;
+    margin: 0;
+
+    input {
+      position: absolute;
+      right: 100%;
+      bottom: 100%;
+      opacity: 1;
+      visibility: hidden;
+
+      &:checked {
+        + .control-label {
+          border-color: $primary;
+          box-shadow: inset 0 0 0 1px $primary;
+        }
+      }
+    }
+
+    .control-label {
+      color: $secondary;
+      border: 1px solid #CFD2D7;
+      border-radius: 4px;
+      text-align: center;
+      width: 100%;
+
+      @include rem(padding, 14px);
+      @include rem(font-size, 16px);
+      @include rem(min-width, 120px);
+      @include rem(line-height, 20px);
+
+      @include transition(all $transition-default);
+
+      &:after,
+      &:before {
+        display: none;
+      }
+    }
+  }
+
+  + .radio {
+    margin-top: 0;
+  }
+}
+
+.radio-group {
+  margin-left: -5px;
+  margin-right: -5px;
+
+  @include clearfix;
+
+  .radio {
+    float: left;
+    margin: 0;
+    padding: 0 5px;
+  }
+
+  @media all and (max-width: $screen-mobile) {
+    .radio {
+      width: 50% !important;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.group_salutation {
+  .radio {
+    width: 25%;
+  }
+}
+
+.group_preferred_contact {
+  .radio {
+    width: 180px;
+  }
+}
+
+.panel_group {
+  @include rem(margin-bottom, 80px);
+}
+
+.toggled_form {
+  position: relative;
+
+  .btn_close_form {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index:10;
+    color: rgba(#657180, .6);
+
+    @include rem(top, 20px);
+
+    .icon {
+      @include rem(font-size, 30px);
+    }
+  }
+}
+
+.form_accelerate {
+  position: relative;
+  max-width: 570px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include rem(margin-bottom, 60px);
+  @include rem(padding, 20px 0);
+
+  .form-group {
+    @include rem(margin-bottom, 24px);
+  }
+
+  .submit-group {
+    @include rem(margin, 60px 0 0);
+  }
+
+  .form-control {
+    border-color: $gray-25;
+
+    &:focus {
+      border-color: $gray-light;
+    }
+  }
+
+  h4 {
+    text-transform: none;
+    letter-spacing: 0;
+    color: #333333;
+    border-bottom: 0;
+    padding-bottom:0;
+
+    @include rem(margin-bottom, 15px);
+    @include rem(font-size, 21px);
+
+    ~ h4 {
+      @include rem(margin-top, 50px);
+    }
+  }
+}
+
+h3.border_bottom {
+  border-bottom: 1px solid $border-alt;
+
+  @include rem(padding-bottom, 20px);
+  @include rem(margin-bottom, 30px);
+}
+
+.hint--result {
+  margin: 20px 0;
+}
+
+.list--media {
+  h3 {
+    a {
+      color: inherit;
+
+      &:hover {
+        color: rgba($secondary, .8);
+      }
+    }
+  }
+}
+
+.list--media_alt {
+  @include rem(margin-bottom, 70px);
+
+  .list__item {
+    @include rem(margin-bottom, 25px);
+
+    img {
+      margin-top: 0 !important;
+    }
+  }
+
+  h4 {
+    text-transform: none;
+    letter-spacing: 0;
+
+    @include rem(font-size, 21px);
+    @include rem(margin-bottom, 4px !important);
+  }
+
+  @media all and (min-width: $screen-landscape + 1) {
+    .col-sm-2 {
+      width: 100px;
+    }
+  }
+}
+
+.form {
+  .select {
+    @include rem(height, 50px);
+
+    &__value {
+      @include rem(padding-left, 16px);
+    }
+  }
+}
+
+.status_icon {
+  text-align: center;
+  line-height: 60px;
+
+  @include rem(line-height, 62px);
+  @include rem(margin-bottom, 40px);
+
+  &--error {
+    img {
+      @include rem(width, 72px)
+    }
+  }
+}
+
+.form_status {
+  padding:3vh 0;
+
+  h2 {
+    text-align: center;
+
+    @include rem(margin-bottom, 40px);
+  }
+
+  p {
+    line-height: 1.64;
+    letter-spacing: normal;
+
+    @include rem(font-size, 22px);
+
+    a {
+      color: #1694fb;
+
+      &:hover {
+        color: $secondary;
+      }
+    }
+  }
+
+  &__button {
+    @include rem(margin-top, 70px);
+
+    .btn {
+      @include rem(min-width, 150px);
+    }
+  }
+}
+
+.contact_us_widget {
+  @include rem(margin-top, -80px);
+  @include rem(height, 80px);
+  @include rem(padding, 20px 0);
+
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .btn_affix {
+    left: auto;
+    right: auto;
+    float: right;
+    position: relative;
+    z-index:109;
+
+    &:not(.affix) {
+      right: 0 !important;
+    }
+
+    &.affix {
+      position: fixed;
+
+      @include rem(top, 100px);
+    }
+
+    @media all and (max-width: $screen-mobile) {
+      &.affix {
+        position: static;
+
+        @include rem(top, 90px);
+
+      }
+    }
+  }
+
+  @media all and (max-width: $screen-landscape) {
+    margin: 0;
+    padding: 0;
+    display: none;
+
+    .btn_affix {
+      padding-left: 10px;
+      padding-right: 10px;
+
+      .icon {
+        margin-right: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,126 @@
+.exchange_header {
+  position: relative;
+
+  @include rem(margin-top, -40px);
+
+  &__bg {
+    z-index:-1;
+
+    @include rem(margin-bottom, -100px);
+  }
+
+  .h2 {
+    font-weight: normal;
+    line-height: normal;
+    font-size: 34px;
+    margin-top: 0;
+    margin-bottom: 50px;
+
+    @include rem(font-size, 34px);
+    @include rem(line-height, 44px);
+    @include rem(margin-bottom, 50px)
+  }
+
+  @media all and (max-width: $screen-mobile) {
+    &__bg {
+      margin-bottom: -20px;
+
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+.nav-tabs > li > a:not(.btn) {
+  background: transparent !important;
+}
+
+.exchange, .page--exchange {
+  hr {
+    border-width: 1px;
+    max-width: 100%;
+    width: 100%;
+    margin: 10px 0;
+
+    @include rem(margin, 10px 0);
+  }
+
+  .list-inline {
+    color: rgba($secondary, 0.8);
+
+    @include rem(margin-top, 20px);
+    @include rem(margin-bottom, 20px);
+    @include rem(font-size, 18px);
+    @include rem(line-height, 30px);
+  }
+
+  .text {
+    p {
+      color: rgba($secondary, 0.8);
+    }
+  }
+
+  .table-responsive {
+    @include rem(margin, 30px 0 10px);
+  }
+
+  .back_link {
+    color: rgba($secondary, .6);
+    display: inline-block;
+    text-decoration: none !important;
+
+    @include rem(margin-bottom, 60px);
+    @include rem(font-size, 16px);
+
+
+    &:hover {
+      color: $primary;
+    }
+
+    img {
+      display: inline-block;
+      vertical-align: middle;
+      position: relative;
+      top: -1px;
+
+      @include rem(margin-right, 6px);
+    }
+
+    @media (min-width: 992px) {
+      margin-left: 38px;
+    }
+
+    @media (max-width: 767px) {
+
+      @include rem(margin, -39px -15px 20px -25px);
+      @include rem(padding, 20px)
+    }
+  }
+
+  .h2-alt {
+    letter-spacing: .04em;
+
+    @include rem(font-size, 39px);
+    @include rem(margin-bottom, 26px);
+
+  }
+
+  .text {
+    p {
+      @include rem(margin-bottom, 15px);
+    }
+  }
+}
+
+#RatesTableUSD, #RatesTableBTC {
+  min-height: 418px;
+}
+
+.image-container {
+  .image {
+    + figcaption {
+      @include rem(margin-top, 40px);
+    }
+  }
+}
